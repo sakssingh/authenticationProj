@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const encrypt = require('mongoose-encryption');
 const app = express();
 
-mongoose.connect('mongodb+srv://admin-saksham:test123@cluster0.dswqk.mongodb.net/userDB');
+mongoose.connect('mongodb+srv://admin-saksham:' + process.env.DBPASSWORD + '@cluster0.dswqk.mongodb.net/userDB');
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
